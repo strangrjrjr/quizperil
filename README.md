@@ -1,5 +1,13 @@
 # quizperil
+
 Trivia Against The Clock!
+
+## Communication/Action Plan
+
+- Group session to build database and rails backend
+- Readme on master branch as single source of truth
+- Use slack as asynchronous communication during weekend/off hours
+- Rule set on repo to require 2 members to view pull request before merging to master
 
 ## User Stories
 
@@ -16,16 +24,24 @@ Trivia Against The Clock!
 ## Models
 
 - User
+    has_many :quizzes
+    has_many :questions
+    has_many :questions, through: :quizzes
     - id
     - username
 
-- Game
+- Quiz
+    belongs_to :user
+    has_many :questions
     - id
     - number_right
     - number_wrong
     - total
+    - user_id
 
 - Question
+    belongs_to :user
+    belongs_to :quiz
     - id
     - category
     - type
@@ -33,14 +49,20 @@ Trivia Against The Clock!
     - question
     - correct_answer
     - incorrect_answers []
+    - user_id
+    - quiz_id
 
 ## Routes
 
-- '/' -> homepage/login
-- '/quiz' -> main quiz page
-- '/result' -> end of game page and button to retake?
+Single page app, default routing, but restricted actions (currently)
 
-## **TODO**
+## Frontend
+
+- Compartmentalize page via divs and ids
+- Break work out into components like background, logo, formatting, etc
+- Once MVP is reached, start working on JS effects/CSS
+
+## TODO for this weekend
 
 - Build rails backend (setup custom routes, serialize array of incorrect answers, seed db)
 - Create HTML pages (home, quiz, result)
