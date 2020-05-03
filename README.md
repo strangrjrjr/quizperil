@@ -29,6 +29,10 @@ Trivia Against The Clock!
     has_many :questions, through: :quizzes
     - id
     - username
+    
+    # Routes
+    - show
+    - create
 
 - Quiz
     belongs_to :user
@@ -38,6 +42,11 @@ Trivia Against The Clock!
     - number_wrong
     - total
     - user_id
+
+    # Routes
+    - show
+    - create
+    - update
 
 - Question
     belongs_to :user
@@ -51,6 +60,9 @@ Trivia Against The Clock!
     - incorrect_answers []
     - user_id
     - quiz_id
+    
+    # Routes
+    - show
 
 ## Routes
 
