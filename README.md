@@ -83,7 +83,7 @@ Single page app, default routing, but restricted actions (currently)
 - Break work out into components like background, logo, formatting, etc
 - Once MVP is reached, start working on JS effects/CSS
 
-## TODO for this weekend
+## TODO 
 
 [x] Build rails backend (setup custom routes, serialize array of incorrect answers, seed db)
 
