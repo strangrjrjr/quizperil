@@ -24,15 +24,22 @@ Trivia Against The Clock!
 ## Models
 
 - User
+
     has_many :quizzes
+
     has_many :questions
+
     has_many :questions, through: :quizzes
+
     - id
     - username
 
 - Quiz
+
     belongs_to :user
+
     has_many :quizquestions
+
     has_many :questions, through: :quizquestions
 
     - id
@@ -42,8 +49,11 @@ Trivia Against The Clock!
     - user_id
 
 - Question
+
     has_many :quizquestions
+
     has_many :quizzes, through: :quizquestions
+
     - id
     - category
     - question_type
@@ -53,8 +63,11 @@ Trivia Against The Clock!
     - incorrect_answers []
 
 - QuizQuestion
+
     belongs_to :quiz
+
     belongs_to :question
+
     - id
     - quiz_id
     - question_id
@@ -72,5 +85,6 @@ Single page app, default routing, but restricted actions (currently)
 
 ## TODO for this weekend
 
-- Build rails backend (setup custom routes, serialize array of incorrect answers, seed db)
-- Create HTML pages (home, quiz, result)
+[x] Build rails backend (setup custom routes, serialize array of incorrect answers, seed db)
+
+[x] Create HTML pages (home, quiz, result)
