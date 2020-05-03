@@ -32,7 +32,9 @@ Trivia Against The Clock!
 
 - Quiz
     belongs_to :user
-    has_many :questions
+    has_many :quizquestions
+    has_many :questions, through: :quizquestions
+
     - id
     - number_right
     - number_wrong
@@ -40,17 +42,23 @@ Trivia Against The Clock!
     - user_id
 
 - Question
-    belongs_to :user
-    belongs_to :quiz
+    has_many :quizquestions
+    has_many :quizzes, through: :quizquestions
     - id
     - category
-    - type
+    - question_type
     - difficulty
     - question
     - correct_answer
     - incorrect_answers []
-    - user_id
+
+- QuizQuestion
+    belongs_to :quiz
+    belongs_to :question
+    - id
     - quiz_id
+    - question_id
+
 
 ## Routes
 
