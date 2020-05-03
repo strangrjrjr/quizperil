@@ -12,3 +12,4 @@
 # Reset token: https://opentdb.com/api_token.php?command=reset&token=YOURTOKENHERE
 # Tokens are deleted after 6 hours.
 # JSON.parse(RestClient.get(url)) #=> ruby data structure 
+
