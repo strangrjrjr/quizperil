@@ -67,7 +67,7 @@ Trivia Against The Clock!
     belongs_to :quiz
 
     belongs_to :question
-    
+
     - id
     - quiz_id
     - question_id
@@ -85,5 +85,6 @@ Single page app, default routing, but restricted actions (currently)
 
 ## TODO for this weekend
 
-- Build rails backend (setup custom routes, serialize array of incorrect answers, seed db)
-- Create HTML pages (home, quiz, result)
+[x] Build rails backend (setup custom routes, serialize array of incorrect answers, seed db)
+
+[x] Create HTML pages (home, quiz, result)
