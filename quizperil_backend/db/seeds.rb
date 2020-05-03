@@ -12,3 +12,40 @@
 # Reset token: https://opentdb.com/api_token.php?command=reset&token=YOURTOKENHERE
 # Tokens are deleted after 6 hours.
 # JSON.parse(RestClient.get(url)) #=> ruby data structure 
+
+# GENERATE USERS
+
+5.times do 
+    User.create(username: Faker::Esport.unique.player)
+end
+
+# GENERATE QUIZZES
+10.times do
+    Quiz.create(number_right: (1+ rand(10)), number_wrong: (1+rand(10)), total: 10, user_id: User.all.sample.id)
+end
+
+# GENERATE QUESTIONS
+
+# get session token
+sesh = JSON.parse(RestClient.get("https://opentdb.com/api_token.php?command=request"))
+session_token = sesh["token"]
+
+# make API call for questions
+results = JSON.parse(RestClient.get("https://opentdb.com/api.php?amount=50&token=#{session_token}"))
+puts "SESSION TOKEN #{session_token}"
+
+questions = results["results"]
+puts "RESULTS RECEIVED"
+questions.each do |question|
+    
+    quest = Question.create(category: question["category"], question_type: question["type"], difficulty: question["difficulty"], question: question["question"], correct_answer: question["correct_answer"], incorrect_answers: question["incorrect_answers"])
+   
+end
+
+# GENERATE QUIZQUESTIONS
+100.times do 
+    Quizquestion.create(quiz_id: Quiz.all.sample.id, question_id: Question.all.sample.id)
+end
+
+puts "DONE"
+

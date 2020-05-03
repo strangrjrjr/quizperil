@@ -1,4 +1,5 @@
 class Question < ApplicationRecord
-  belongs_to :user 
-  belongs_to :quiz
+    has_many :quizquestions
+    has_many :quizzes, through: :quizquestions
+    serialize :incorrect_answers, Array
 end
