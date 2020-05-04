@@ -112,7 +112,7 @@ Single page app, default routing, but restricted actions (currently)
 
 [] Standardize naming conventions
 
-[] Start page rendering separate JS files (login, quiz, result)
+[x] Start page rendering separate JS files (login, quiz, result)
 
 [] Selectable timer interval
 

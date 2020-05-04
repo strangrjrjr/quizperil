@@ -1,17 +1,16 @@
-// import {user_id, num_right, num_wrong, total} from './quiz.js';
 
 // temp variables for mockup
 // REMOVE THESE IN PRODUCTION
-let user_id = 1
-let num_right = 6
-let num_wrong = 7
-let total = 13
+// let user_id = 1
+// let num_right = 6
+// let num_wrong = 7
+// let total = 13
 
 // Hide gameplay elements
 let quizQuestion = document.getElementById('quiz_question')
-quizQuestion.style.display = "none"
+quizQuestion.classList.toggle('hidden')
 let question = document.getElementById('question')
-question.style.display = "none"
+question.classList.toggle('hidden')
 let answers = document.getElementById('answers')
 
 // Create result elements
@@ -36,10 +35,6 @@ resultsContainer.append(rightContainer, wrongContainer, totalContainer)
 document.body.appendChild(resultsContainer)
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 // Percentage? Snarky comments?
 
 // Button to start new quiz
@@ -50,14 +45,15 @@ document.body.appendChild(quizBtn)
 
 quizBtn.addEventListener('click', function() {
     // toggle results off
-    // CHANGE THESE
-    resultsContainer.style.display = "none"
+    resultsContainer.classList.toggle('hidden')
+    
+    // toggle button off
+    quizBtn.classList.toggle('hidden')
 
     // toggle quiz form on
-    // CHANGE THESE
-    quizQuestion.style.display = "block"
-    question.style.display = "block"
-    answers.style.display = "block"
+    quizQuestion.classList.toggle('hidden')
+    question.classList.toggle('hidden')
+    answers.classList.toggle('hidden')
 
     // fetch post to Quiz to create new quiz?
     fetch('http://localhost:3000/quizzes', {
