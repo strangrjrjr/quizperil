@@ -6,6 +6,7 @@ usernameBar.id = 'usernameBar'
 let input = document.createElement('input')
 input.type = 'text'
 input.id = 'input'
+input.name = 'username'
 input.placeholder = 'Please enter your username'
 input.className = 'center-align'
 let startButton = document.createElement('button')
