@@ -38,6 +38,10 @@ Trivia Against The Clock!
     - id
     - username
 
+    # Routes
+    - show
+    - create
+
 - Quiz
 
     belongs_to :user
@@ -51,6 +55,11 @@ Trivia Against The Clock!
     - number_wrong
     - total
     - user_id
+
+    # Routes
+    - show
+    - create
+    - update
 
 - Question
 
