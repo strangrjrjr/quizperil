@@ -21,6 +21,10 @@ Trivia Against The Clock!
 - Bonus for a good score (<80%?)
 - Snarky feedback for poor scores?
 
+## Mockups
+
+[NinjaMock Renders](https://ninjamock.com/s/XJ89HGx)
+
 ## Models
 
 - User
@@ -85,6 +89,20 @@ Single page app, default routing, but restricted actions (currently)
 
 ## TODO 
 
-[x] Build rails backend (setup custom routes, serialize array of incorrect answers, seed db)
+[x] Build rails backend (create schema, API calls, serialize array of incorrect answers, seed db)
 
-[x] Create HTML pages (home, quiz, result)
+[x] Create HTML page template
+
+[x] Create JS template
+
+[x] Awesome logo created
+
+[x] Work on mockups
+
+[x] Color scheme Grey background, black text. Logo is main focus
+
+[] Start page rendering separate JS files (login, quiz, result)
+
+[] Selectable timer interval
+
+[] Start work on css
