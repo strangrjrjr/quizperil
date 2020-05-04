@@ -1,10 +1,13 @@
-// import {num_right, num_wrong, total} from './quiz.js';
+// import {user_id, num_right, num_wrong, total} from './quiz.js';
+
 
 
 // Hide gameplay elements
-document.getElementById('quiz_question').style.display = "none"
-document.getElementById('question').style.display = "none"
-document.getElementById('answers').style.display = "none"
+let quizQuestion = document.getElementById('quiz_question')
+quizQuestion.style.display = "none"
+let question = document.getElementById('question')
+question.style.display = "none"
+let answers = document.getElementById('answers')
 
 // Create result elements
 let resultsContainer = document.createElement('div')
@@ -31,6 +34,27 @@ document.append(resultsContainer)
 // Percentage? Snarky comments?
 
 // Button to start new quiz
+let quizBtn = document.createElement('button')
+quizBtn.id = "quiz_button"
+
+quizBtn.addEventListener('click', function() {
+    // toggle results off
+    resultsContainer.style.display = "none"
+
+    // toggle quiz form on
+    quizQuestion.style.display = "block"
+    question.style.display = "block"
+    answers.style.display = "block"
+
+    // fetch post to Quiz to create new quiz?
+    fetch('http://localhost:3000/quizzes', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(user_id)
+    })
+})
 
 
 
