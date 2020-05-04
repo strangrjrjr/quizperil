@@ -36,6 +36,10 @@ resultsContainer.append(rightContainer, wrongContainer, totalContainer)
 document.body.appendChild(resultsContainer)
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 // Percentage? Snarky comments?
 
 // Button to start new quiz
