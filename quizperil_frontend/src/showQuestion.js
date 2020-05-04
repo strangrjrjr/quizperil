@@ -61,7 +61,11 @@ function submitAnswer(e) {
             answer = elements[i].value
         }
     }
-    
+    if (answer === "correct") {
+        
+    } else {
+        
+    }
     debugger
 }
 
