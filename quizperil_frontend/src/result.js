@@ -1,6 +1,11 @@
 // import {user_id, num_right, num_wrong, total} from './quiz.js';
 
-
+// temp variables for mockup
+// REMOVE THESE IN PRODUCTION
+let user_id = 1
+let num_right = 6
+let num_wrong = 7
+let total = 13
 
 // Hide gameplay elements
 let quizQuestion = document.getElementById('quiz_question')
@@ -28,7 +33,7 @@ totalContainer.innerText = `Total: ${total}`
 
 resultsContainer.append(rightContainer, wrongContainer, totalContainer)
 
-document.append(resultsContainer)
+document.body.appendChild(resultsContainer)
 
 
 // Percentage? Snarky comments?
@@ -36,12 +41,16 @@ document.append(resultsContainer)
 // Button to start new quiz
 let quizBtn = document.createElement('button')
 quizBtn.id = "quiz_button"
+quizBtn.innerText = "Start a new quiz!"
+document.body.appendChild(quizBtn)
 
 quizBtn.addEventListener('click', function() {
     // toggle results off
+    // CHANGE THESE
     resultsContainer.style.display = "none"
 
     // toggle quiz form on
+    // CHANGE THESE
     quizQuestion.style.display = "block"
     question.style.display = "block"
     answers.style.display = "block"
@@ -52,7 +61,7 @@ quizBtn.addEventListener('click', function() {
         headers: {
             'Content-Type': 'application/json' 
         },
-        body: JSON.stringify(user_id)
+        body: JSON.stringify("quiz", quiz_id, "user_id", user_id)
     })
 })
 
