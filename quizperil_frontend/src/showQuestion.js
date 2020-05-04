@@ -3,7 +3,6 @@ const BASEURL = "http://localhost:3000/questions/"
 const div = document.getElementById("quiz_question")
 const h4 = document.getElementById("question")
 const form = document.getElementById("answers")
-const submit = document.getElementById("submit")
 
 function fetchQuestions() {
     fetch(BASEURL)
@@ -43,6 +42,27 @@ function showQuestion(questions) {
         form.appendChild(inp)
         form.appendChild(ans)
     })
+
+    let submit = document.createElement("input")
+    submit.type = "submit"
+    submit.value = "Submit"
+    
+    form.appendChild(submit)
+
+    form.addEventListener("submit", submitAnswer)
+}
+
+function submitAnswer(e) {
+    e.preventDefault()
+    elements = e.target.elements
+    let answer
+    for(i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+            answer = elements[i].value
+        }
+    }
+    
+    debugger
 }
 
 fetchQuestions()
