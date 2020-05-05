@@ -94,3 +94,57 @@ function shuffle(array) {
 	return array;
 
 };
+
+// -------------
+// TIMER SECTION
+// -------------
+
+let head = document.getElementById('head')
+let timerDiv = document.createElement('div')
+let timeSpan = document.createElement('span')
+timeSpan.id = 'time'
+let milliSpan = document.createElement('span')
+milliSpan.id = 'millispan'
+timerDiv.appendChild(timeSpan)
+timerDiv.appendChild(milliSpan)
+
+head.appendChild(timerDiv)
+
+// millisecond timer
+const THROTTLE_AMOUNT = 10
+function countdown(secs) {
+    let milli = secs * (1000);
+    let counter = setInterval(function() {
+        if(milli <= 0) {
+            clearInterval(counter);
+            return
+        }
+        milli -= THROTTLE_AMOUNT;
+        milliSpan.innerText = `${milli}`
+    }, THROTTLE_AMOUNT);
+}
+
+// minute and second timer
+function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        countdown(1)
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = `TIMER:` + minutes + ":" + seconds + ":";
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+// start timer on start button click
+startButton.onclick = function () {
+    let twoMinutes = 60 * 2,
+    display = document.querySelector('#time');
+    startTimer(twoMinutes, display);
+};
+
