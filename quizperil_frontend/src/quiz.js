@@ -1,18 +1,17 @@
 const BASEURL = "http://localhost:3000/questions/"
 
-const div = document.getElementById("quiz_question")
 const h4 = document.getElementById("question")
 const form = document.getElementById("answers")
 
-function fetchQuestions() {
+const fetchQuestions = function() {
     fetch(BASEURL)
     .then(resp => resp.json())
     .then(questions => showQuestion(questions))
 }
 
 function showQuestion(questions) {
-    let question = questions[0]
-    console.log(question)
+    let question = questions.shift()
+    
     h4.innerHTML = question.question
 
     let inp = document.createElement("input")
@@ -68,5 +67,3 @@ function submitAnswer(e) {
     }
     debugger
 }
-
-fetchQuestions()
