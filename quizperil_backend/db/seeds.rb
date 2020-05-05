@@ -26,19 +26,21 @@ end
 
 # GENERATE QUESTIONS
 
-# get session token
-sesh = JSON.parse(RestClient.get("https://opentdb.com/api_token.php?command=request"))
-session_token = sesh["token"]
+# # get session token
+# sesh = JSON.parse(RestClient.get("https://opentdb.com/api_token.php?command=request"))
+# session_token = sesh["token"]
 
-# make API call for questions
-results = JSON.parse(RestClient.get("https://opentdb.com/api.php?amount=50&token=#{session_token}"))
-puts "SESSION TOKEN #{session_token}"
+# # make API call for questions
+# results = JSON.parse(RestClient.get("https://opentdb.com/api.php?amount=50&token=#{session_token}"))
+# puts "SESSION TOKEN #{session_token}"
 
-questions = results["results"]
-puts "RESULTS RECEIVED"
+# questions = results["results"]
+# puts "RESULTS RECEIVED"
+
+questions = JSON.parse(open("#{Rails.root}/db/questions.json").read)
 questions.each do |question|
-    
-    quest = Question.create(category: question["category"], question_type: question["type"], difficulty: question["difficulty"], question: question["question"], correct_answer: question["correct_answer"], incorrect_answers: question["incorrect_answers"])
+    # chane question["question_type"] to question["type"] when using API
+    quest = Question.create(category: question["category"], question_type: question["question_type"], difficulty: question["difficulty"], question: question["question"], correct_answer: question["correct_answer"], incorrect_answers: question["incorrect_answers"])
    
 end
 
