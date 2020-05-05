@@ -150,6 +150,7 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = `TIMER:` + minutes + ":" + seconds + ":";
         if (--timer < 0) {
+            // don't restart, run other functions
             timer = duration;
         }
     }, 1000);
