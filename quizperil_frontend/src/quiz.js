@@ -65,5 +65,5 @@ function submitAnswer(e) {
     } else {
         console.log("Incorrect!")
     }
-    debugger
+    // debugger
 }
