@@ -5,6 +5,8 @@ const form = document.getElementById("answers")
 let questionList = []
 let numRight = 0
 let numWrong = 0
+const messageDiv = document.getElementById("modal")
+const messageH2 = document.getElementById("message")
 
 function fetchQuestions(method) {
     fetch(QUESTURL)
@@ -71,15 +73,27 @@ function submitAnswer(e) {
         }
     }
     if (answer === "correct") {
+        messageDiv.style.backgroundColor = "green"
+        messageH2.innerText = "Correct!"
+        console.log("Correct!")
         numRight++
         console.log(`Correct! ${numRight}`)
     } else {
+        messageDiv.style.backgroundColor = "maroon"
+        messageH2.innerText = "Incorrect!"
+        console.log("Incorrect!")
         numWrong++
         console.log(`Incorrect! ${numWrong}`)
     }
+    toggleHidden(messageDiv)
+    setTimeout(toggleHidden, 1000, messageDiv)
     if (true) {
         showQuestion()
     }
+}
+
+function toggleHidden(element) {
+    element.classList.toggle("hidden")
 }
 
 /**
