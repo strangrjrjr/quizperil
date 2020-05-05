@@ -14,6 +14,7 @@ function updateMetrics() {
     rightContainer.innerText = `Correct: ${numRight}`
     wrongContainer.innerText = `Incorrect: ${numWrong}`
     totalContainer.innerText = `Total: ${numRight + numWrong}`
+    quizPost()
 }
 
 // wrap in method to fire when timer expires
