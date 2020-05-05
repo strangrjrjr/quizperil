@@ -25,7 +25,12 @@ function quizPost() {
             'Content-Type': 'application/json',
             Accept: 'application/json'
         },
-        body: JSON.stringify({number_right: `${num_right}`, number_wrong: `${num_wrong}`, total: `${total}`, user_id: `${user_id}`})
+        body: JSON.stringify({
+            numberRight: `${numRight}`,
+            numberWrong: `${numWrong}`,
+            total: `${total}`,
+            user_id: `${user.id}`
+        })
     })
     .then(res => res.json())
     .then(json => console.log(json))
