@@ -1,10 +1,4 @@
 
-// temp variables for mockup
-// REMOVE THESE IN PRODUCTION
-let num_right = 6
-let num_wrong = 7
-let total = 13
-
 const QUIZURL = "http://localhost:3000/quizzes"
 
 // Hide gameplay elements
