@@ -28,3 +28,14 @@ html {
 .hidden {
   display: none;
 }
+
+#question, span {
+  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+  color: black
+}
+
+form#answers{
+  margin-top: 30px;
+  margin-left: 10%;
+}

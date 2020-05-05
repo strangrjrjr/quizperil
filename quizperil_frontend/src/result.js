@@ -1,16 +1,15 @@
 
 // temp variables for mockup
 // REMOVE THESE IN PRODUCTION
-// let user_id = 1
-// let num_right = 6
-// let num_wrong = 7
-// let total = 13
+let num_right = 6
+let num_wrong = 7
+let total = 13
+
+const QUIZURL = "http://localhost:3000/quizzes"
 
 // Hide gameplay elements
 let quizQuestion = document.getElementById('quiz_question')
 quizQuestion.classList.toggle('hidden')
-let question = document.getElementById('question')
-let answers = document.getElementById('answers')
 
 // Create result elements
 let resultsContainer = document.createElement('div')
@@ -33,6 +32,22 @@ resultsContainer.append(rightContainer, wrongContainer, totalContainer)
 
 document.body.appendChild(resultsContainer)
 
+// wrap in method to fire when timer expires
+function quizPost() {
+    // post fetch to put results in db
+    // should I make this a patch? where to generate quiz?
+    fetch(QUIZURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        },
+        body: JSON.stringify({number_right: `${num_right}`, number_wrong: `${num_wrong}`, total: `${total}`, user_id: `${user_id}`})
+    })
+    .then(res => res.json())
+    .then(json => console.log(json))
+}
+
 
 // Percentage? Snarky comments?
 
@@ -51,17 +66,8 @@ quizBtn.addEventListener('click', function() {
 
     // toggle quiz form on
     quizQuestion.classList.toggle('hidden')
-    question.classList.toggle('hidden')
-    answers.classList.toggle('hidden')
 
-    // fetch post to Quiz to create new quiz?
-    fetch('http://localhost:3000/quizzes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json' 
-        },
-        body: JSON.stringify("quiz", quiz_id, "user_id", user_id)
-    })
+    // restart timer?
 })
 
 
