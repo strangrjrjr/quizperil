@@ -23,4 +23,7 @@ function setUser(e) {
 
 function startQuiz(user) {
     console.log(user)
+    const questDiv = document.getElementById("quiz_question")
+    questDiv.classList.toggle("hidden")
+    fetchQuestions()
 }

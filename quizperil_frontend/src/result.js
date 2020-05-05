@@ -10,7 +10,6 @@
 let quizQuestion = document.getElementById('quiz_question')
 quizQuestion.classList.toggle('hidden')
 let question = document.getElementById('question')
-question.classList.toggle('hidden')
 let answers = document.getElementById('answers')
 
 // Create result elements
