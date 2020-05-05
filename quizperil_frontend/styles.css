@@ -46,8 +46,8 @@ form#answers{
 }
 
 #submit-button{
-  margin: 0 auto;
-
+  margin-top: 10px;
+  color:black
 }
 
 form#answers span{
