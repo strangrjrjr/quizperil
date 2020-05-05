@@ -32,10 +32,34 @@ html {
 #question, span {
   font-family: 'Share Tech Mono', monospace;
   text-align: center;
-  color: black
+  color: black;
+}
+
+#question{
+  margin-left: 50px;   
+  margin-right: 50px;
 }
 
 form#answers{
   margin-top: 30px;
-  margin-left: 10%;
+  margin-left: 25%;
+}
+
+#submit-button{
+  margin-top: 10px;
+  color:black
+}
+
+form#answers span{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: medium;
+}
+
+#timer_div{
+  margin-left: 70%;
+}
+
+#timer_div span{
+  font-size: xx-large;
 }

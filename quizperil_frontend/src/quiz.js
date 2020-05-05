@@ -47,14 +47,16 @@ function showQuestion() {
     shuffle(inputs)
 
     inputs.forEach(p => form.appendChild(p))
-
+    let div = document.createElement('div')
+    div.className = "button-div"
     let submit = document.createElement("button")
     submit.type = "submit"
-    submit.className = "btn waves-effect waves-light"
+    submit.className = "btn teal lighten-3 waves-effect waves-light"
     submit.name = "action"
+    submit.id = "submit-button"
     submit.innerHTML = "Submit"
-    
-    form.appendChild(submit)
+    div.appendChild(submit)
+    form.appendChild(div)
 
     form.addEventListener("submit", submitAnswer)
 }
@@ -69,11 +71,11 @@ function submitAnswer(e) {
         }
     }
     if (answer === "correct") {
-        console.log("Correct!")
         numRight++
+        console.log(`Correct! ${numRight}`)
     } else {
-        console.log("Incorrect!")
         numWrong++
+        console.log(`Incorrect! ${numWrong}`)
     }
     if (true) {
         showQuestion()
@@ -113,10 +115,13 @@ function shuffle(array) {
 
 let head = document.getElementById('head')
 let timerDiv = document.createElement('div')
+timerDiv.id = 'timer_div'
 let timeSpan = document.createElement('span')
 timeSpan.id = 'time'
+timeSpan.classList.add('teal', 'lighten-3')
 let milliSpan = document.createElement('span')
 milliSpan.id = 'millispan'
+milliSpan.classList.add('teal', 'lighten-3')
 
 timerDiv.appendChild(timeSpan)
 timerDiv.appendChild(milliSpan)
@@ -142,25 +147,38 @@ function countdown(secs) {
 function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
 
-    setInterval(function () {
+    let run = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
         countdown(1)
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = `TIMER:` + minutes + ":" + seconds + ":";
+        // add other time-based changes here
+
         if (--timer < 0) {
             // don't restart, run other functions
-            timer = duration;
+            clearInterval(run)
+            toggleResults()
+            return
         }
     }, 1000);
 }
 
+function toggleResults() {
+
+    // toggle timer
+    document.getElementById('timer_div').classList.toggle('hidden')
+    // toggle results view
+    document.getElementById('results').classList.toggle('hidden')
+    // toggle quiz form 
+    document.getElementById('quiz_question').classList.toggle('hidden')
+}
 // start timer on start button click
 startButton.onclick = function () {
-    let twoMinutes = 60 * 2,
+    let time = 60 * 1,
     display = document.querySelector('#time');
-    startTimer(twoMinutes, display);
+    startTimer(time, display);
 };
 // -----------------
 // END TIMER SECTION
