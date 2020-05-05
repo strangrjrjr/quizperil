@@ -110,7 +110,7 @@ Single page app, default routing, but restricted actions (currently)
 
 [x] Color scheme Grey background, black text. Logo is main focus
 
-[] Standardize naming conventions
+[x] Standardize naming conventions
 
 [x] Start page rendering separate JS files (login, quiz, result)
 
