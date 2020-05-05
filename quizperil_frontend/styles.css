@@ -64,6 +64,10 @@ form#answers span{
   font-size: xx-large;
 }
 
+
+form#usernameBar.container {
+  max-width: 260px;
+
 #modal {
   border-radius: 10px;
   color: white;
