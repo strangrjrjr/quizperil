@@ -1,9 +1,9 @@
 
 // temp variables for mockup
 // REMOVE THESE IN PRODUCTION
-let num_right = 6
-let num_wrong = 7
-let total = 13
+// let num_right = 6
+// let num_wrong = 7
+let total = numRight + numWrong
 
 const QUIZURL = "http://localhost:3000/quizzes"
 
@@ -18,11 +18,11 @@ resultsContainer.id = "results"
 
 let rightContainer = document.createElement('p')
 rightContainer.id = "number_right"
-rightContainer.innerText = `Correct: ${num_right}`
+rightContainer.innerText = `Correct: ${numRight}`
 
 let wrongContainer = document.createElement('p')
 wrongContainer.id = "number_wrong"
-wrongContainer.innerText = `Incorrect: ${num_wrong}`
+wrongContainer.innerText = `Incorrect: ${numWrong}`
 
 let totalContainer = document.createElement('p')
 totalContainer.id = "total"
@@ -42,7 +42,12 @@ function quizPost() {
             'Content-Type': 'application/json',
             Accept: 'application/json'
         },
-        body: JSON.stringify({number_right: `${num_right}`, number_wrong: `${num_wrong}`, total: `${total}`, user_id: `${user_id}`})
+        body: JSON.stringify({
+            numberRight: `${numRight}`,
+            numberWrong: `${numWrong}`,
+            total: `${total}`,
+            user_id: `${user.id}`
+        })
     })
     .then(res => res.json())
     .then(json => console.log(json))
