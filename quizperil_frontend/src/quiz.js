@@ -51,7 +51,7 @@ function showQuestion() {
     div.className = "button-div"
     let submit = document.createElement("button")
     submit.type = "submit"
-    submit.className = "btn waves-effect waves-light"
+    submit.className = "btn teal lighten-3 waves-effect waves-light"
     submit.name = "action"
     submit.id = "submit-button"
     submit.innerHTML = "Submit"
