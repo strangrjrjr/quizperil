@@ -116,4 +116,6 @@ Single page app, default routing, but restricted actions (currently)
 
 [] Selectable timer interval
 
+[] Timer for each question, auto submit on expiration
+
 [] Start work on css

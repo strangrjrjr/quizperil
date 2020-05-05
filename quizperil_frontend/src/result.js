@@ -35,6 +35,7 @@ document.body.appendChild(resultsContainer)
 // wrap in method to fire when timer expires
 function quizPost() {
     // post fetch to put results in db
+    // should I make this a patch? where to generate quiz?
     fetch(QUIZURL, {
         method: 'POST',
         headers: {
