@@ -114,6 +114,8 @@ Single page app, default routing, but restricted actions (currently)
 
 [x] Start page rendering separate JS files (login, quiz, result)
 
+[x] Timer with milliseconds
+
 [] Selectable timer interval
 
 [] Timer for each question, auto submit on expiration
