@@ -1,36 +1,19 @@
 
-// temp variables for mockup
-// REMOVE THESE IN PRODUCTION
-// let num_right = 6
-// let num_wrong = 7
-let total = numRight + numWrong
-
 const QUIZURL = "http://localhost:3000/quizzes"
 
 // Hide gameplay elements
 let quizQuestion = document.getElementById('quiz_question')
 quizQuestion.classList.toggle('hidden')
 
-// Create result elements
-let resultsContainer = document.createElement('div')
-resultsContainer.id = "results"
-
-
-let rightContainer = document.createElement('p')
-rightContainer.id = "number_right"
+// update result elements
+let rightContainer = document.getElementById('number_right')
 rightContainer.innerText = `Correct: ${numRight}`
 
-let wrongContainer = document.createElement('p')
-wrongContainer.id = "number_wrong"
+let wrongContainer = document.getElementById('number_wrong')
 wrongContainer.innerText = `Incorrect: ${numWrong}`
 
-let totalContainer = document.createElement('p')
-totalContainer.id = "total"
-totalContainer.innerText = `Total: ${total}`
-
-resultsContainer.append(rightContainer, wrongContainer, totalContainer)
-
-document.body.appendChild(resultsContainer)
+let totalContainer = document.getElementById('total')
+totalContainer.innerText = `Total: ${numRight + numWrong}`
 
 // wrap in method to fire when timer expires
 function quizPost() {
@@ -55,12 +38,6 @@ function quizPost() {
 
 
 // Percentage? Snarky comments?
-
-// Button to start new quiz
-let quizBtn = document.createElement('button')
-quizBtn.id = "quiz_button"
-quizBtn.innerText = "Start a new quiz!"
-document.body.appendChild(quizBtn)
 
 quizBtn.addEventListener('click', function() {
     // toggle results off

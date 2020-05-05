@@ -114,8 +114,31 @@ Single page app, default routing, but restricted actions (currently)
 
 [x] Start page rendering separate JS files (login, quiz, result)
 
+[x] Timer with milliseconds
+
+[x] Start work on css
+
+### MVP
+
+[] Timer ends -> go to results
+
+[] Create results elements in index.html
+
+[] Results makes POST to quiz db
+
+[] Indicate correct vs incorrect answers
+
+[] Results retake button functionality
+
+[] Results logout button & functionality
+
+[] Results process & display quiz results
+
+[] Add questions to QuizQuestion db (create array & push question id)
+
+### Stretch
+
 [] Selectable timer interval
 
 [] Timer for each question, auto submit on expiration
 
-[] Start work on css

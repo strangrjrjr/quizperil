@@ -117,12 +117,14 @@ let timeSpan = document.createElement('span')
 timeSpan.id = 'time'
 let milliSpan = document.createElement('span')
 milliSpan.id = 'millispan'
+
 timerDiv.appendChild(timeSpan)
 timerDiv.appendChild(milliSpan)
 
 head.appendChild(timerDiv)
 
 // millisecond timer
+// delay in milliseconds to keep browsers happy
 const THROTTLE_AMOUNT = 10
 function countdown(secs) {
     let milli = secs * (1000);
@@ -148,6 +150,7 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = `TIMER:` + minutes + ":" + seconds + ":";
         if (--timer < 0) {
+            // don't restart, run other functions
             timer = duration;
         }
     }, 1000);
@@ -159,4 +162,6 @@ startButton.onclick = function () {
     display = document.querySelector('#time');
     startTimer(twoMinutes, display);
 };
-
+// -----------------
+// END TIMER SECTION
+// -----------------

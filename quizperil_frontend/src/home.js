@@ -15,9 +15,3 @@ startButton.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 
 startButton.id = 'startButton'
 usernameBar.append(input, startButton)
 homeDiv.appendChild(usernameBar)
-
- // toggle results off
- resultsContainer.classList.toggle('hidden')
-    
- // toggle button off
- quizBtn.classList.toggle('hidden')
