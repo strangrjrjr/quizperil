@@ -55,7 +55,7 @@ function startQuiz(user) {
         <span class="black-text">Robert Vaughn</span>
         </label>
       </p>
-      <button class="submit-question container black-text btn-large yellow lighten-2 waves-effect waves-light" type="submit" name="action">Submit</button>
+      <button class=" black-text btn-large yellow lighten-2 waves-effect waves-light" type="submit" name="action">Submit</button>
       </form>
     </div>`
 }
