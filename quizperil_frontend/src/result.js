@@ -38,14 +38,14 @@ quizBtn.addEventListener('click', function() {
     // toggle results off
     resultsContainer.classList.toggle('hidden')
     
-    // toggle button off
-    quizBtn.classList.toggle('hidden')
+//     // toggle button off
+//     quizBtn.classList.toggle('hidden')
 
-    // toggle quiz form on
-    quizQuestion.classList.toggle('hidden')
+//     // toggle quiz form on
+//     quizQuestion.classList.toggle('hidden')
 
-    // restart timer?
+//     // restart timer?
+// })
+
+
 })
-
-
-

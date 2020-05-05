@@ -47,14 +47,16 @@ function showQuestion() {
     shuffle(inputs)
 
     inputs.forEach(p => form.appendChild(p))
-
+    let div = document.createElement('div')
+    div.className = "button-div"
     let submit = document.createElement("button")
     submit.type = "submit"
     submit.className = "btn waves-effect waves-light"
     submit.name = "action"
+    submit.id = "submit-button"
     submit.innerHTML = "Submit"
-    
-    form.appendChild(submit)
+    div.appendChild(submit)
+    form.appendChild(div)
 
     form.addEventListener("submit", submitAnswer)
 }
@@ -113,10 +115,13 @@ function shuffle(array) {
 
 let head = document.getElementById('head')
 let timerDiv = document.createElement('div')
+timerDiv.id = 'timer_div'
 let timeSpan = document.createElement('span')
 timeSpan.id = 'time'
+timeSpan.classList.add('teal', 'lighten-3')
 let milliSpan = document.createElement('span')
 milliSpan.id = 'millispan'
+milliSpan.classList.add('teal', 'lighten-3')
 
 timerDiv.appendChild(timeSpan)
 timerDiv.appendChild(milliSpan)
