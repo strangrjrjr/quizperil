@@ -34,18 +34,16 @@ function quizPost() {
 
 // Percentage? Snarky comments?
 
-quizBtn.addEventListener('click', function() {
-    // toggle results off
-    resultsContainer.classList.toggle('hidden')
-    
-    // toggle button off
-    quizBtn.classList.toggle('hidden')
+document.getElementById('quiz_button').addEventListener('click', function() {
+   
+    toggleResults()
 
-    // toggle quiz form on
-    quizQuestion.classList.toggle('hidden')
-
-    // restart timer?
+    // restart timer
+    let twoMinutes = 60 * 2,
+    display = document.querySelector('#time');
+    startTimer(twoMinutes, display);
 })
+
 
 
 
