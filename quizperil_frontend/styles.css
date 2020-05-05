@@ -63,3 +63,7 @@ form#answers span{
 #timer_div span{
   font-size: xx-large;
 }
+
+form#usernameBar.container {
+  max-width: 260px;
+}
