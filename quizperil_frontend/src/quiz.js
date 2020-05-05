@@ -115,10 +115,13 @@ function shuffle(array) {
 
 let head = document.getElementById('head')
 let timerDiv = document.createElement('div')
+timerDiv.id = 'timer_div'
 let timeSpan = document.createElement('span')
 timeSpan.id = 'time'
+timeSpan.classList.add('teal', 'lighten-3')
 let milliSpan = document.createElement('span')
 milliSpan.id = 'millispan'
+milliSpan.classList.add('teal', 'lighten-3')
 
 timerDiv.appendChild(timeSpan)
 timerDiv.appendChild(milliSpan)

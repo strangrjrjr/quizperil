@@ -56,3 +56,10 @@ form#answers span{
   font-size: medium;
 }
 
+#timer_div{
+  margin-left: 70%;
+}
+
+#timer_div span{
+  font-size: xx-large;
+}
