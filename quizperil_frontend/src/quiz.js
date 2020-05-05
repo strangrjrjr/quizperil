@@ -26,25 +26,12 @@ function showQuestion(questions) {
     `
     inputs.push(p)
 
-    // let inp = document.createElement("input")
-    // inp.type = "radio"
-    // inp.id = "correct"
-    // inp.name = "question"
-    // inp.value = "correct"
-
-    // let correct = document.createElement("label")
-    // correct.innerHTML = question.correct_answer
-    // correct.for = "correct"
-
-    // form.appendChild(inp)
-    // form.appendChild(correct)
-
     question.incorrect_answers.forEach((answer, id) => {
         let p = document.createElement("p")
         p.innerHTML = `
             <label>
             <input type="radio" id="${id}" name="question" value="${id}">
-            <span>${answer}</span>
+            <span class=“black-text”>${answer}</span>
             </label>
         `
         inputs.push(p)
@@ -53,24 +40,12 @@ function showQuestion(questions) {
     shuffle(inputs)
 
     inputs.forEach(p => form.appendChild(p))
-    // question.incorrect_answers.forEach((answer, id) => {
-    //     let inp = document.createElement("input")
-    //     inp.type = "radio"
-    //     inp.id = id
-    //     inp.name = "question"
-    //     inp.value = id
 
-    //     let ans = document.createElement("label")
-    //     ans.innerHTML = answer
-    //     ans.for = id
-
-    //     form.appendChild(inp)
-    //     form.appendChild(ans)
-    // })
-
-    let submit = document.createElement("input")
+    let submit = document.createElement("button")
     submit.type = "submit"
-    submit.value = "Submit"
+    submit.className = "btn waves-effect waves-light"
+    submit.name = "action"
+    submit.innerHTML = "Submit"
     
     form.appendChild(submit)
 
