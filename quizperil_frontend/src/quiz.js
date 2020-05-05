@@ -144,7 +144,7 @@ head.appendChild(timerDiv)
 
 // millisecond timer
 // delay in milliseconds to keep browsers happy
-const THROTTLE_AMOUNT = 10
+const THROTTLE_AMOUNT = 5
 function countdown(secs) {
     let milli = secs * (1000);
     let counter = setInterval(function() {
@@ -171,8 +171,9 @@ function startTimer(duration, display) {
         // add other time-based changes here
 
         if (--timer < 0) {
-            // don't restart, run other functions
+            // functions to run on timer expiration
             clearInterval(run)
+            updateMetrics()
             toggleResults()
             return
         }
