@@ -1,6 +1,7 @@
 // Maybe we should make different js files and this folder and call them here?
 const USERURL = "http://localhost:3000/users"
 
+
 usernameBar.addEventListener("submit", setUser)
 
 function setUser(e) {
@@ -21,8 +22,9 @@ function setUser(e) {
     .then(user => startQuiz(user))
 } 
 
-function startQuiz(user) {
+function startQuiz(user) {  
     console.log(user)
+
     let quiz = document.getElementById('quiz_question')
     quiz.classList.toggle("hidden")
     quiz.innerHTML = `
@@ -58,4 +60,7 @@ function startQuiz(user) {
       <button class=" black-text btn-large yellow lighten-2 waves-effect waves-light" type="submit" name="action">Submit</button>
       </form>
     </div>`
+    // const questDiv = document.getElementById("quiz_question")
+    // questDiv.classList.toggle("hidden")
+    // fetchQuestions()
 }
