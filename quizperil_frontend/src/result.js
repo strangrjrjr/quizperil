@@ -5,15 +5,16 @@ const QUIZURL = "http://localhost:3000/quizzes"
 let quizQuestion = document.getElementById('quiz_question')
 quizQuestion.classList.toggle('hidden')
 
-// update result elements
-let rightContainer = document.getElementById('number_right')
-rightContainer.innerText = `Correct: ${numRight}`
+// update metrics
+function updateMetrics() {
+    let rightContainer = document.getElementById('number_right')
+    let wrongContainer = document.getElementById('number_wrong')
+    let totalContainer = document.getElementById('total')
 
-let wrongContainer = document.getElementById('number_wrong')
-wrongContainer.innerText = `Incorrect: ${numWrong}`
-
-let totalContainer = document.getElementById('total')
-totalContainer.innerText = `Total: ${numRight + numWrong}`
+    rightContainer.innerText = `Correct: ${numRight}`
+    wrongContainer.innerText = `Incorrect: ${numWrong}`
+    totalContainer.innerText = `Total: ${numRight + numWrong}`
+}
 
 // wrap in method to fire when timer expires
 function quizPost() {

@@ -120,19 +120,19 @@ Single page app, default routing, but restricted actions (currently)
 
 ### MVP
 
-[] Timer ends -> go to results
+[x] Timer ends -> go to results
 
-[] Create results elements in index.html
+[x] Create results elements in index.html
 
 [] Results makes POST to quiz db
 
-[] Indicate correct vs incorrect answers
+[x] Indicate correct vs incorrect answers
 
-[] Results retake button functionality
+[x] Results retake button functionality
 
 [] Results logout button & functionality
 
-[] Results process & display quiz results
+[x] Results process & display quiz results
 
 [] Add questions to QuizQuestion db (create array & push question id)
 
