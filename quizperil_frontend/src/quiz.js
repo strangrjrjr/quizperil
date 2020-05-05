@@ -2,15 +2,22 @@ const QUESTURL = "http://localhost:3000/questions/"
 
 const h4 = document.getElementById("question")
 const form = document.getElementById("answers")
+let questionList = []
+let numRight = 0
+let numWrong = 0
 
-function fetchQuestions() {
+function fetchQuestions(method) {
     fetch(QUESTURL)
     .then(resp => resp.json())
-    .then(questions => showQuestion(questions))
+    .then(questions => {
+        questionList = questions
+        method()
+    })
 }
 
-function showQuestion(questions) {
-    let question = questions.shift()
+function showQuestion() {
+    // debugger
+    let question = questionList.pop()
     form.innerHTML = ""
     
     h4.innerHTML = question.question
@@ -63,8 +70,13 @@ function submitAnswer(e) {
     }
     if (answer === "correct") {
         console.log("Correct!")
+        numRight++
     } else {
         console.log("Incorrect!")
+        numWrong++
+    }
+    if (true) {
+        showQuestion()
     }
 }
 
