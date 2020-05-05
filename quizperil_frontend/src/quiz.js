@@ -5,6 +5,8 @@ const form = document.getElementById("answers")
 let questionList = []
 let numRight = 0
 let numWrong = 0
+const messageDiv = document.getElementById("modal")
+const messageH2 = document.getElementById("message")
 
 function fetchQuestions(method) {
     fetch(QUESTURL)
@@ -71,15 +73,27 @@ function submitAnswer(e) {
         }
     }
     if (answer === "correct") {
+        messageDiv.style.backgroundColor = "green"
+        messageH2.innerText = "Correct!"
         console.log("Correct!")
         numRight++
+        console.log(`Correct! ${numRight}`)
     } else {
+        messageDiv.style.backgroundColor = "maroon"
+        messageH2.innerText = "Incorrect!"
         console.log("Incorrect!")
         numWrong++
+        console.log(`Incorrect! ${numWrong}`)
     }
+    toggleHidden(messageDiv)
+    setTimeout(toggleHidden, 1000, messageDiv)
     if (true) {
         showQuestion()
     }
+}
+
+function toggleHidden(element) {
+    element.classList.toggle("hidden")
 }
 
 /**
@@ -147,25 +161,38 @@ function countdown(secs) {
 function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
 
-    setInterval(function () {
+    let run = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
         countdown(1)
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = `TIMER:` + minutes + ":" + seconds + ":";
+        // add other time-based changes here
+
         if (--timer < 0) {
             // don't restart, run other functions
-            timer = duration;
+            clearInterval(run)
+            toggleResults()
+            return
         }
     }, 1000);
 }
 
+function toggleResults() {
+
+    // toggle timer
+    document.getElementById('timer_div').classList.toggle('hidden')
+    // toggle results view
+    document.getElementById('results').classList.toggle('hidden')
+    // toggle quiz form 
+    document.getElementById('quiz_question').classList.toggle('hidden')
+}
 // start timer on start button click
 startButton.onclick = function () {
-    let twoMinutes = 60 * 2,
+    let time = 60 * 1,
     display = document.querySelector('#time');
-    startTimer(twoMinutes, display);
+    startTimer(time, display);
 };
 // -----------------
 // END TIMER SECTION

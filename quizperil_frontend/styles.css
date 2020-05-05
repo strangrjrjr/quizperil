@@ -64,6 +64,23 @@ form#answers span{
   font-size: xx-large;
 }
 
+
 form#usernameBar.container {
   max-width: 260px;
+
+#modal {
+  border-radius: 10px;
+  color: white;
+
+  margin: 1em;
+  padding: 1em;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#modal p {
+  margin-bottom: 0;
 }

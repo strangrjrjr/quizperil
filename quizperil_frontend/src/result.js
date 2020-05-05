@@ -25,7 +25,12 @@ function quizPost() {
             'Content-Type': 'application/json',
             Accept: 'application/json'
         },
-        body: JSON.stringify({number_right: `${num_right}`, number_wrong: `${num_wrong}`, total: `${total}`, user_id: `${user_id}`})
+        body: JSON.stringify({
+            numberRight: `${numRight}`,
+            numberWrong: `${numWrong}`,
+            total: `${total}`,
+            user_id: `${user.id}`
+        })
     })
     .then(res => res.json())
     .then(json => console.log(json))
@@ -34,18 +39,15 @@ function quizPost() {
 
 // Percentage? Snarky comments?
 
-quizBtn.addEventListener('click', function() {
-    // toggle results off
-    resultsContainer.classList.toggle('hidden')
-    
-//     // toggle button off
-//     quizBtn.classList.toggle('hidden')
+document.getElementById('quiz_button').addEventListener('click', function() {
+   
+    toggleResults()
 
-//     // toggle quiz form on
-//     quizQuestion.classList.toggle('hidden')
-
-//     // restart timer?
-// })
-
-
+    // restart timer
+    let twoMinutes = 60 * 2,
+    display = document.querySelector('#time');
+    startTimer(twoMinutes, display);
 })
+
+
+
