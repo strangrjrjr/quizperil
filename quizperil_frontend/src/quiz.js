@@ -3,6 +3,8 @@ const QUESTURL = "http://localhost:3000/questions/"
 const h4 = document.getElementById("question")
 const form = document.getElementById("answers")
 let questionList = []
+let numRight = 0
+let numWrong = 0
 
 function fetchQuestions(method) {
     fetch(QUESTURL)
@@ -68,8 +70,10 @@ function submitAnswer(e) {
     }
     if (answer === "correct") {
         console.log("Correct!")
+        numRight++
     } else {
         console.log("Incorrect!")
+        numWrong++
     }
     if (true) {
         showQuestion()
