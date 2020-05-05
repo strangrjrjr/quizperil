@@ -46,4 +46,3 @@ document.getElementById('quiz_button').addEventListener('click', function() {
 
 
 
-
