@@ -1,4 +1,5 @@
 const QUESTURL = "http://localhost:3000/questions/"
+const QUIZURL = "http://localhost:3000/quizzes"
 
 const h4 = document.getElementById("question")
 const form = document.getElementById("answers")
@@ -18,7 +19,7 @@ function fetchQuestions(method) {
 }
 
 function showQuestion() {
-    // debugger
+
     let question = questionList.pop()
     form.innerHTML = ""
     
@@ -77,13 +78,11 @@ function submitAnswer(e) {
         messageH2.innerText = "Correct!"
         console.log("Correct!")
         numRight++
-        console.log(`Correct! ${numRight}`)
     } else {
         messageDiv.style.backgroundColor = "maroon"
         messageH2.innerText = "Incorrect!"
         console.log("Incorrect!")
         numWrong++
-        console.log(`Incorrect! ${numWrong}`)
     }
     toggleHidden(messageDiv)
     setTimeout(toggleHidden, 1000, messageDiv)
@@ -181,7 +180,7 @@ function startTimer(duration, display) {
 }
 
 function toggleResults() {
-
+  
     // toggle timer
     document.getElementById('timer_div').classList.toggle('hidden')
     // toggle results view
@@ -189,6 +188,7 @@ function toggleResults() {
     // toggle quiz form 
     document.getElementById('quiz_question').classList.toggle('hidden')
 }
+
 // start timer on start button click
 startButton.onclick = function () {
     let time = 60 * 1,

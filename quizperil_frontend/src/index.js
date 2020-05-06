@@ -1,5 +1,6 @@
 // Maybe we should make different js files and this folder and call them here?
 const USERURL = "http://localhost:3000/users"
+let userId
 
 usernameBar.addEventListener("submit", setUser)
 
@@ -22,8 +23,9 @@ function setUser(e) {
 } 
 
 function getData(user) {
+    userId = user.id
     const questDiv = document.getElementById("quiz_question")
-    questDiv.classList.toggle("hidden")
+    // questDiv.classList.toggle("hidden")
     fetchQuestions(startQuiz)
 }
 
