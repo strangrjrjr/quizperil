@@ -3,7 +3,7 @@ let quizBtn = document.getElementById('quiz_button')
 quizBtn.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 'lighten-2')
 
 let logoutBtn = document.getElementById('logout_button')
-logoutBtn.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 'lighten-2')
+logoutBtn.classList.add('btn-large', 'waves-effect', 'waves-light', 'red', 'lighten-2')
 
 // update metrics
 function updateMetrics() {
@@ -38,10 +38,53 @@ function quizPost() {
         })
     })
     .then(res => res.json())
-    .then(json => console.log(json))
+    .then(user => displayPercentage(user))
+}
+
+// Percentage? Snarky comments?
+function displayPercentage(user){
+   let percentage = 0 
+    if(user['total'] === 0){
+        percentage = 0
+    } else {
+        percentage = Math.round((user['number_right']*100) / user['total'])
+    }
+    console.log(percentage)
+    let banner = document.getElementById('percentage')
+    banner.innerText = `${percentage} %`
+    if (percentage >= 10){
+        wipeImage()
+        displayDog()
+    } else {
+        wipeImage()
+        displayCat()
+    }
+}
+
+function wipeImage(){
+    img = document.getElementById('image')
+    img.innerHTML = ''
+}
+
+function displayCat(){
+    catImg = document.createElement('img')
+    catImg.classList.add('responsive-img')
+    catImg.src = './src/imgs/angry-cat.jpeg'
+    img = document.getElementById('image')
+    img.appendChild(catImg)
+}
+
+function displayDog(){
+    dogImg = document.createElement('img')
+    dogImg.classList.add('responsive-img')
+    dogImg.src = './src/imgs/happy-dog.jpg'
+    dogImg.style.maxWidth = "250px";
+    img = document.getElementById('image')
+    img.appendChild(dogImg)
 }
 
 // retake button
+
 document.getElementById('quiz_button').addEventListener('click', function() {
     // question view
     toggleResults()

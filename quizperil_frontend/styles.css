@@ -102,6 +102,20 @@ form#usernameBar.container {
   font-size: x-large;
 }
 
+#percentage {
+  padding: 10px;
+  font-size: x-large;
+}
+
+#quiz_button{
+  margin-bottom: 10px;
+  max-width: 250px;
+}
+
+#logout_button{
+  max-width: 250px;
+}
+
 footer {
   font-family: 'Share Tech Mono', monospace;
   text-align: center;
