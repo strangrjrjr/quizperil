@@ -88,7 +88,6 @@ function displayDog(){
 document.getElementById('quiz_button').addEventListener('click', function() {
     // question view
     toggleResults()
-    toggleHidden(document.getElementById('timer_div'))
     // reset counters
     numRight = 0
     numWrong = 0

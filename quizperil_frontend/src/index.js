@@ -4,14 +4,12 @@ let userId
 let difficulty
 let interval
 
-usernameBar.addEventListener("submit", setUser)
+usernameBar.addEventListener("submit", getUser)
 
-function setUser(e) {
+function getUser(e) {
     e.preventDefault()
-    homeDiv.classList.toggle("hidden")
-
-    difficulty = e.target.difficulty.value
-    interval = e.target.interval.value
+    toggleHidden(homeDiv)
+    toggleHidden()//selectorsDiv?
 
     fetch(USERURL, {
         method: "POST",
@@ -25,10 +23,22 @@ function setUser(e) {
     })
     .then(response => response.json())
     .then(user => getData(user))
-} 
+}
 
-function getData(user) {
+function setUser(user) {
     userId = user.id
+    //something.addEventListener("submit", getSelectors)
+}
+
+function getSelectors(e) {
+    e.preventDefault()
+
+    difficulty = "easy"//e.target.difficulty.value
+    // interval = e.target.interval.value
+    getData()
+}
+
+function getData() {
     const questDiv = document.getElementById("quiz_question")
     toggleHidden(questDiv)
     toggleHidden(timerDiv)
