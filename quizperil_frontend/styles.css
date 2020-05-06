@@ -85,3 +85,19 @@ form#usernameBar.container {
 #modal p {
   margin-bottom: 0;
 }
+
+#total{
+  padding: 10px;
+  font-size: x-large;
+  margin-bottom: 20px;
+}
+
+#number_right{
+  padding: 10px;
+  font-size: x-large;
+}
+
+#number_wrong{
+  padding: 10px;
+  font-size: x-large;
+}
