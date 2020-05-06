@@ -8,11 +8,13 @@ let numRight = 0
 let numWrong = 0
 const messageDiv = document.getElementById("modal")
 const messageH2 = document.getElementById("message")
+const question_ids = []
 
 function fetchQuestions(method) {
     fetch(QUESTURL)
     .then(resp => resp.json())
     .then(questions => {
+        shuffle(questions)
         questionList = questions
         method()
     })
@@ -22,6 +24,7 @@ function showQuestion() {
 
     let question = questionList.pop()
     form.innerHTML = ""
+    question_ids.push(question.id)
     
     h4.innerHTML = question.question
 

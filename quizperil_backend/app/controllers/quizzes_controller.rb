@@ -11,6 +11,7 @@ class QuizzesController < ApplicationController
   
   def create
     newQuiz = Quiz.create(quiz_params)
+    newQuiz.question_ids = params[:question_ids]
     render json: newQuiz.to_json(:except => [:updated_at, :created_at])
   end
 
@@ -23,6 +24,6 @@ class QuizzesController < ApplicationController
   private 
 
   def quiz_params
-    params.require(:quiz).permit!
+    params.require(:quiz).permit(:number_right, :number_wrong, :total, :user_id, :question_ids)
   end 
 end
