@@ -134,7 +134,7 @@ Single page app, default routing, but restricted actions (currently)
 
 [x] Results process & display quiz results
 
-[] Add questions to QuizQuestion db (create array & push question id)
+[x] Add questions to QuizQuestion db (create array & push question id)
 
 ### Stretch
 
