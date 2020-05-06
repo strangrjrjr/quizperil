@@ -2,6 +2,8 @@
 let quizBtn = document.getElementById('quiz_button')
 quizBtn.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 'lighten-2')
 
+let logoutBtn = document.getElementById('logout_button')
+logoutBtn.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 'lighten-2')
 
 // update metrics
 function updateMetrics() {
@@ -50,5 +52,16 @@ document.getElementById('quiz_button').addEventListener('click', function() {
     startTimer(time, display);
 })
 
+document.getElementById('logout_button').addEventListener('click', function() {
 
+    toggleResults()
+    toggleHidden(document.getElementById('quiz_question'))
+    toggleHidden(document.getElementById('timer_div'))
+    toggleHidden(document.getElementById('homepage'))
+    document.getElementById('usernameBar').reset()
+    numRight = 0
+    numWrong = 0
+    userId = null
+
+})
 
