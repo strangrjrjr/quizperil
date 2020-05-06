@@ -28,6 +28,39 @@ function showQuestion() {
     
     h4.innerHTML = question.question
 
+    if (question.question_type === "boolean") {
+        booleanQuestion(question)
+    } else {
+        multipleQuestion(question)
+    }
+}
+
+function booleanQuestion(question) {
+    let correct = document.createElement("p")
+    correct.innerHTML = `
+        <label>
+        <input type="radio" id="correct" name="question" value="correct">
+        <span>${question.correct_answer}</span>
+        </label>
+    `
+    let incorrect = document.createElement("p")
+    incorrect.innerHTML = `
+        <label>
+        <input type="radio" id="incorrect" name="question" value="incorrect">
+        <span>${question.incorrect_answers[0]}</span>
+        </label>
+    `
+    if (question.correct_answer === "True") {
+        form.appendChild(correct)
+        form.appendChild(incorrect)
+    } else {
+        form.appendChild(incorrect)
+        form.appendChild(correct)
+    }
+    createSubmit()
+}
+
+function multipleQuestion(question) {
     let inputs = []
 
     let p = document.createElement("p")
@@ -53,6 +86,11 @@ function showQuestion() {
     shuffle(inputs)
 
     inputs.forEach(p => form.appendChild(p))
+
+    createSubmit()
+}
+
+function createSubmit() {
     let div = document.createElement('div')
     div.className = "button-div"
     let submit = document.createElement("button")
@@ -129,20 +167,9 @@ function shuffle(array) {
 // TIMER SECTION
 // -------------
 
-let head = document.getElementById('head')
-let timerDiv = document.createElement('div')
-timerDiv.id = 'timer_div'
-let timeSpan = document.createElement('span')
-timeSpan.id = 'time'
-timeSpan.classList.add('teal', 'lighten-3')
-let milliSpan = document.createElement('span')
-milliSpan.id = 'millispan'
-milliSpan.classList.add('teal', 'lighten-3')
-
-timerDiv.appendChild(timeSpan)
-timerDiv.appendChild(milliSpan)
-
-head.appendChild(timerDiv)
+let timerDiv = document.getElementById('timer_div')
+let timeSpan = document.getElementById('time')
+let milliSpan = document.getElementById('millispan')
 
 // millisecond timer
 // delay in milliseconds to keep browsers happy

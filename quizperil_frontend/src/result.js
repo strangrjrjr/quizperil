@@ -10,10 +10,13 @@ function updateMetrics() {
     let rightContainer = document.getElementById('number_right')
     let wrongContainer = document.getElementById('number_wrong')
     let totalContainer = document.getElementById('total')
+    let percentage = document.getElementById('percentage')
 
     rightContainer.innerText = `Correct: ${numRight}`
     wrongContainer.innerText = `Incorrect: ${numWrong}`
     totalContainer.innerText = `Total: ${numRight + numWrong}`
+    // Percentage? Snarky comments?
+    percentage.innerText = `Percentage: ${parseInt(numRight / (numRight + numWrong) * 100)}`
     quizPost()
 }
 
@@ -37,7 +40,6 @@ function quizPost() {
     .then(res => res.json())
     .then(user => displayPercentage(user))
 }
-
 
 // Percentage? Snarky comments?
 function displayPercentage(user){
@@ -81,10 +83,12 @@ function displayDog(){
     img.appendChild(dogImg)
 }
 
+// retake button
 
 document.getElementById('quiz_button').addEventListener('click', function() {
     // question view
     toggleResults()
+    toggleHidden(document.getElementById('timer_div'))
     // reset counters
     numRight = 0
     numWrong = 0
@@ -94,6 +98,7 @@ document.getElementById('quiz_button').addEventListener('click', function() {
     startTimer(time, display);
 })
 
+// logout button
 document.getElementById('logout_button').addEventListener('click', function() {
 
     toggleResults()

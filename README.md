@@ -38,7 +38,7 @@ Trivia Against The Clock!
     - id
     - username
 
-    ## Routes
+    ### Routes
     - show
     - create
 
@@ -56,7 +56,7 @@ Trivia Against The Clock!
     - total
     - user_id
 
-    # Routes
+    ### Routes
     - show
     - create
     - update
@@ -75,6 +75,9 @@ Trivia Against The Clock!
     - correct_answer
     - incorrect_answers []
 
+    ### Routes
+    - index
+
 - QuizQuestion
 
     belongs_to :quiz
@@ -88,7 +91,7 @@ Trivia Against The Clock!
 
 ## Routes
 
-Single page app, default routing, but restricted actions (currently)
+Single page app, default routing, but restricted actions
 
 ## Frontend
 
@@ -96,7 +99,7 @@ Single page app, default routing, but restricted actions (currently)
 - Break work out into components like background, logo, formatting, etc
 - Once MVP is reached, start working on JS effects/CSS
 
-## TODO 
+## TODO
 
 [x] Build rails backend (create schema, API calls, serialize array of incorrect answers, seed db)
 
@@ -130,15 +133,14 @@ Single page app, default routing, but restricted actions (currently)
 
 [x] Results retake button functionality
 
-[] Results logout button & functionality
+[x] Results logout button & functionality
 
 [x] Results process & display quiz results
 
-[] Add questions to QuizQuestion db (create array & push question id)
+[x] Add questions to QuizQuestion db (create array & push question id)
 
 ### Stretch
 
 [] Selectable timer interval
 
 [] Timer for each question, auto submit on expiration
-
