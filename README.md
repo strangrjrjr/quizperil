@@ -141,7 +141,7 @@ Single page app, default routing, but restricted actions
 
 ### Stretch
 
-[] Selectable timer interval
+[x] Selectable timer interval
 
 [x] Timer changes color/flashes after a certain interval
 
