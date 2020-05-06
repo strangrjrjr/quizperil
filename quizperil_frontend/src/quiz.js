@@ -15,13 +15,24 @@ function fetchQuestions(method) {
     .then(resp => resp.json())
     .then(questions => {
         shuffle(questions)
-        questionList = questions
+        switch (difficulty) {
+            case "easy":
+                questionList = questions.filter(question => question.difficulty === "easy")
+                break;
+            case "medium":
+                questionList = questions.filter(question => question.difficulty === "medium")
+                break;
+            case "hard":
+                questionList = questions.filter(question => question.difficulty === "hard")
+                break;
+            default:
+                questionList = questions
+        }
         method()
     })
 }
 
 function showQuestion() {
-
     let question = questionList.pop()
     form.innerHTML = ""
     question_ids.push(question.id)
