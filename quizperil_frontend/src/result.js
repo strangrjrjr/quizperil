@@ -84,11 +84,9 @@ function displayDog(){
 }
 
 // retake button
-
 document.getElementById('quiz_button').addEventListener('click', function() {
     // question view
     toggleResults()
-    toggleHidden(document.getElementById('timer_div'))
     // reset counters
     numRight = 0
     numWrong = 0
@@ -102,8 +100,8 @@ document.getElementById('quiz_button').addEventListener('click', function() {
 document.getElementById('logout_button').addEventListener('click', function() {
 
     toggleResults()
-    toggleHidden(document.getElementById('quiz_question'))
     toggleHidden(document.getElementById('timer_div'))
+    toggleHidden(document.getElementById('quiz_question'))
     toggleHidden(document.getElementById('homepage'))
     document.getElementById('usernameBar').reset()
     numRight = 0

@@ -198,7 +198,9 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = `TIMER:` + minutes + ":" + seconds + ":";
         // add other time-based changes here
-
+        if (timer < 10) {
+            flashTimer(timer)
+        }
         if (--timer < 0) {
             // functions to run on timer expiration
             clearInterval(run)
@@ -209,10 +211,36 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
+function flashTimer(timer) {
+    timeSpan.classList.remove('teal')
+    timeSpan.classList.remove('lighten-3')
+    timeSpan.classList.add('red')
+    milliSpan.classList.remove('teal')
+    milliSpan.classList.remove('lighten-3')
+    milliSpan.classList.add('red')
+    let flash = setInterval(function() {
+        timeSpan.classList.toggle('red')
+        milliSpan.classList.toggle('red')
+        
+    },200)
+    if (timer < 0){
+        clearInterval(flash)
+    }
+    
+}
+
 function toggleResults() {
   
     // toggle timer
-    document.getElementById('timer_div').classList.toggle('hidden')
+    timerDiv.classList.toggle('hidden')
+
+    // restyle timer
+    timeSpan.classList.remove('red')
+    timeSpan.classList.add('teal')
+    timeSpan.classList.add('lighten-3')
+    milliSpan.classList.remove('red')
+    milliSpan.classList.add('teal')
+    milliSpan.classList.add('lighten-3')
     // toggle results view
     document.getElementById('results').classList.toggle('hidden')
     // toggle quiz form 
