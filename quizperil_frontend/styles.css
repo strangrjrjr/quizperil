@@ -75,7 +75,7 @@ form#usernameBar.container {
 
   margin: 1em;
   padding: 1em;
-
+  text-align: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -100,4 +100,22 @@ form#usernameBar.container {
 #number_wrong{
   padding: 10px;
   font-size: x-large;
+}
+
+footer {
+  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+  background-color: #c2c1c1;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+a {
+  color: #fff176 !important;
+}
+
+a:hover {
+  text-decoration: underline;
 }
