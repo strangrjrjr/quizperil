@@ -101,3 +101,17 @@ form#usernameBar.container {
   padding: 10px;
   font-size: x-large;
 }
+
+footer {
+  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+  background-color: #c2c1c1;
+}
+
+a {
+  color: #fff176 !important;
+}
+
+a:hover {
+  text-decoration: underline;
+}

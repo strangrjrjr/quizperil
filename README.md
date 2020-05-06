@@ -38,7 +38,7 @@ Trivia Against The Clock!
     - id
     - username
 
-    ## Routes
+    ### Routes
     - show
     - create
 
@@ -56,7 +56,7 @@ Trivia Against The Clock!
     - total
     - user_id
 
-    # Routes
+    ### Routes
     - show
     - create
     - update
@@ -75,6 +75,9 @@ Trivia Against The Clock!
     - correct_answer
     - incorrect_answers []
 
+    ### Routes
+    - index
+
 - QuizQuestion
 
     belongs_to :quiz
@@ -88,7 +91,7 @@ Trivia Against The Clock!
 
 ## Routes
 
-Single page app, default routing, but restricted actions (currently)
+Single page app, default routing, but restricted actions
 
 ## Frontend
 
@@ -141,4 +144,3 @@ Single page app, default routing, but restricted actions (currently)
 [] Selectable timer interval
 
 [] Timer for each question, auto submit on expiration
-
