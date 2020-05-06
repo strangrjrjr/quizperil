@@ -96,7 +96,7 @@ Single page app, default routing, but restricted actions (currently)
 - Break work out into components like background, logo, formatting, etc
 - Once MVP is reached, start working on JS effects/CSS
 
-## TODO 
+## TODO
 
 [x] Build rails backend (create schema, API calls, serialize array of incorrect answers, seed db)
 
@@ -130,11 +130,11 @@ Single page app, default routing, but restricted actions (currently)
 
 [x] Results retake button functionality
 
-[] Results logout button & functionality
+[x] Results logout button & functionality
 
 [x] Results process & display quiz results
 
-[] Add questions to QuizQuestion db (create array & push question id)
+[x] Add questions to QuizQuestion db (create array & push question id)
 
 ### Stretch
 
