@@ -19,7 +19,7 @@ html {
   margin-bottom: 20px;
 }
 
-#startButton {
+#startButton, #quiz_button {
   color: black;
   display: block;
   margin: 0 auto;
@@ -29,7 +29,7 @@ html {
   display: none;
 }
 
-#question, span {
+#question, span, #results {
   font-family: 'Share Tech Mono', monospace;
   text-align: center;
   color: black;
@@ -67,6 +67,7 @@ form#answers span{
 
 form#usernameBar.container {
   max-width: 260px;
+}
 
 #modal {
   border-radius: 10px;

@@ -1,9 +1,7 @@
+// style results elements
+let quizBtn = document.getElementById('quiz_button')
+quizBtn.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 'lighten-2')
 
-const QUIZURL = "http://localhost:3000/quizzes"
-
-// Hide gameplay elements
-let quizQuestion = document.getElementById('quiz_question')
-quizQuestion.classList.toggle('hidden')
 
 // update metrics
 function updateMetrics() {
@@ -20,7 +18,6 @@ function updateMetrics() {
 // wrap in method to fire when timer expires
 function quizPost() {
     // post fetch to put results in db
-    // should I make this a patch? where to generate quiz?
     fetch(QUIZURL, {
         method: 'POST',
         headers: {
@@ -28,10 +25,10 @@ function quizPost() {
             Accept: 'application/json'
         },
         body: JSON.stringify({
-            numberRight: `${numRight}`,
-            numberWrong: `${numWrong}`,
-            total: `${total}`,
-            user_id: `${user.id}`
+            number_right: `${numRight}`,
+            number_wrong: `${numWrong}`,
+            total: `${numRight + numWrong}`,
+            user_id: `${userId}`
         })
     })
     .then(res => res.json())
@@ -42,13 +39,15 @@ function quizPost() {
 // Percentage? Snarky comments?
 
 document.getElementById('quiz_button').addEventListener('click', function() {
-   
+    // question view
     toggleResults()
-
+    // reset counters
+    numRight = 0
+    numWrong = 0
     // restart timer
-    let twoMinutes = 60 * 2,
+    let time = 60 * 1,
     display = document.querySelector('#time');
-    startTimer(twoMinutes, display);
+    startTimer(time, display);
 })
 
 

@@ -38,7 +38,7 @@ Trivia Against The Clock!
     - id
     - username
 
-    # Routes
+    ## Routes
     - show
     - create
 
@@ -124,7 +124,7 @@ Single page app, default routing, but restricted actions (currently)
 
 [x] Create results elements in index.html
 
-[] Results makes POST to quiz db
+[x] Results makes POST to quiz db
 
 [x] Indicate correct vs incorrect answers
 
