@@ -143,4 +143,10 @@ Single page app, default routing, but restricted actions
 
 [] Selectable timer interval
 
-[] Timer for each question, auto submit on expiration
+[x] Timer changes color/flashes after a certain interval
+
+[] Selectable category (may be too difficult to parse)
+
+[] Selectable difficulty (easy, medium, hard)
+
+[] Add "Trivia against the clock!" to login
