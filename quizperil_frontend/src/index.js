@@ -32,3 +32,10 @@ function getData(user) {
 function startQuiz() {
     showQuestion()
 }
+
+function getElements(){
+    let total = document.getElementById('total').innerText[1]
+    console.log(total)
+}
+
+getElements()
