@@ -26,6 +26,7 @@ function getData(user) {
     userId = user.id
     const questDiv = document.getElementById("quiz_question")
     questDiv.classList.toggle("hidden")
+    // timerDiv.classList.toggle("hidden")
     fetchQuestions(startQuiz)
 }
 
