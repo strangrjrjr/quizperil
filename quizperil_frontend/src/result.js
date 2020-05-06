@@ -52,6 +52,7 @@ function displayPercentage(user){
     console.log(percentage)
     let banner = document.getElementById('percentage')
     banner.innerText = `${percentage} %`
+    // change this to 50 in production
     if (percentage >= 10){
         wipeImage()
         displayDog()
