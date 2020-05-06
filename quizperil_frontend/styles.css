@@ -19,7 +19,7 @@ html {
   margin-bottom: 20px;
 }
 
-#startButton, #quiz_button {
+#startButton, #quiz_button, #logout_button {
   color: black;
   display: block;
   margin: 0 auto;
