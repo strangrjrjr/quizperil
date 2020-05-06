@@ -30,7 +30,8 @@ function quizPost() {
             number_right: `${numRight}`,
             number_wrong: `${numWrong}`,
             total: `${numRight + numWrong}`,
-            user_id: `${userId}`
+            user_id: `${userId}`,
+            question_ids: question_ids
         })
     })
     .then(res => res.json())
