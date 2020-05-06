@@ -67,6 +67,7 @@ form#answers span{
 
 form#usernameBar.container {
   max-width: 260px;
+}
 
 #modal {
   border-radius: 10px;
