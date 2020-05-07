@@ -33,13 +33,14 @@ function setUser(user) {
 function getSelectors(e) {
     e.preventDefault()
     debugger
-    difficulty = "easy"//e.target.difficulty.value
-    // interval = e.target.interval.value
+    difficulty = e.target.inputDifficulty.value
+    interval = e.target.inputTimer.value
     getData()
 }
 
 function getData() {
     const questDiv = document.getElementById("quiz_question")
+    toggleHidden(selectionForm)
     toggleHidden(questDiv)
     toggleHidden(timerDiv)
     fetchQuestions(startQuiz)
