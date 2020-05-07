@@ -1,15 +1,13 @@
 // Maybe we should make different js files and this folder and call them here?
 const USERURL = "http://localhost:3000/users"
 let userId
-let difficulty
-let interval
 
 usernameBar.addEventListener("submit", getUser)
 
 function getUser(e) {
     e.preventDefault()
-    toggleHidden(homeDiv)
-    toggleHidden()//selectorsDiv?
+    toggleHidden(usernameBar)
+    toggleHidden(selectionForm)
 
     fetch(USERURL, {
         method: "POST",
@@ -22,24 +20,24 @@ function getUser(e) {
         })
     })
     .then(response => response.json())
-    .then(user => getData(user))
+    .then(user => setUser(user))
 }
 
 function setUser(user) {
     userId = user.id
-    //something.addEventListener("submit", getSelectors)
+    selectionForm.addEventListener("submit", getSelectors)
 }
 
 function getSelectors(e) {
     e.preventDefault()
-
-    difficulty = "easy"//e.target.difficulty.value
-    // interval = e.target.interval.value
+    // difficulty = e.target.inputDifficulty.value
+    // interval = e.target.inputTimer.value
     getData()
 }
 
 function getData() {
     const questDiv = document.getElementById("quiz_question")
+    toggleHidden(selectionForm)
     toggleHidden(questDiv)
     toggleHidden(timerDiv)
     fetchQuestions(startQuiz)

@@ -86,16 +86,21 @@ function displayDog(){
 
 // retake button
 document.getElementById('quiz_button').addEventListener('click', function() {
-    // question view
-    toggleResults()
+    toggleHidden(document.getElementById('results'))
     // reset counters
     numRight = 0
     numWrong = 0
+    question_ids = []
+    toggleHidden(selectionForm)
+    selectionForm.reset()
+})
+
+function name(params) {
     // restart timer
     let time = 60 * 1,
     display = document.querySelector('#time');
     startTimer(time, display);
-})
+}
 
 // logout button
 document.getElementById('logout_button').addEventListener('click', function() {
@@ -104,7 +109,7 @@ document.getElementById('logout_button').addEventListener('click', function() {
     toggleHidden(document.getElementById('timer_div'))
     toggleHidden(document.getElementById('quiz_question'))
     toggleHidden(document.getElementById('homepage'))
-    document.getElementById('usernameBar').reset()
+    selectionForm.reset()
     numRight = 0
     numWrong = 0
     userId = null

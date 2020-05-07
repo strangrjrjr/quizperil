@@ -8,7 +8,7 @@ let numRight = 0
 let numWrong = 0
 const messageDiv = document.getElementById("modal")
 const messageH2 = document.getElementById("message")
-const question_ids = []
+let question_ids = []
 
 function fetchQuestions(method) {
     fetch(QUESTURL)
@@ -32,7 +32,17 @@ function fetchQuestions(method) {
     })
 }
 
+function checkQuestions() {
+    if (questionList.length === 0) {
+        fetchQuestions(startQuiz)
+        // Should end quiz
+    } else {
+        showQuestion()
+    }
+}
+
 function showQuestion() {
+
     let question = questionList.pop()
     form.innerHTML = ""
     question_ids.push(question.id)
@@ -138,9 +148,8 @@ function submitAnswer(e) {
     }
     toggleHidden(messageDiv)
     setTimeout(toggleHidden, 1000, messageDiv)
-    if (true) {
-        showQuestion()
-    }
+    
+    checkQuestions()
 }
 
 function toggleHidden(element) {
