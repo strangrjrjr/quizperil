@@ -92,7 +92,6 @@ document.getElementById('quiz_button').addEventListener('click', function() {
     numWrong = 0
     question_ids = []
     toggleHidden(selectionForm)
-    selectionForm.reset()
 })
 
 function name(params) {
@@ -105,11 +104,13 @@ function name(params) {
 // logout button
 document.getElementById('logout_button').addEventListener('click', function() {
 
-    toggleResults()
-    toggleHidden(document.getElementById('timer_div'))
-    toggleHidden(document.getElementById('quiz_question'))
-    toggleHidden(document.getElementById('homepage'))
-    selectionForm.reset()
+    // toggleResults()
+    // toggleHidden(document.getElementById('timer_div'))
+    // toggleHidden(document.getElementById('quiz_question'))
+    // toggleHidden(document.getElementById('homepage'))
+    toggleHidden(document.getElementById('results'))
+    usernameBar.reset()
+    toggleHidden(usernameBar)
     numRight = 0
     numWrong = 0
     userId = null
