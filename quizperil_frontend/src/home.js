@@ -32,20 +32,6 @@ selectionForm.classList.add('container')
 selectionForm.classList.add('hidden')
 selectionForm.id = 'selectionForm'
 
-// let inputTimer = document.createElement('input')
-// inputTimer.type = 'text'
-// inputTimer.id = 'inputTimer'
-// inputTimer.name = 'inputTimer'
-// inputTimer.placeholder = 'minutes you want to play'
-// inputTimer.className = 'center-align'
-
-// let inputDifficulty = document.createElement('input')
-// inputDifficulty.type = 'text'
-// inputDifficulty.id = 'inputDifficulty'
-// inputDifficulty.name = 'inputDifficulty'
-// inputDifficulty.placeholder = 'easy/medium/hard/all'
-// inputDifficulty.className = 'center-align'
-
 let difficulty
 let interval
 
@@ -79,11 +65,13 @@ startButton.id = 'startButton'
 function handleTimer(){
     console.log(event.target.innerText)
     interval = event.target.innerText
+    alert(`${interval} minute timer selected!`)
 }
 
 function handleDifficulty() {
     console.log(event.target.innerText)
     difficulty = event.target.innerText
+    alert(`${difficulty} difficulty selected!`)
 }
 
 selectionForm.append(startButton)
