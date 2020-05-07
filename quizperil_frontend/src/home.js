@@ -49,11 +49,11 @@ selectionForm.innerHTML = `
 
 <!-- Dropdown Structure -->
 <ul id='dropdown1' class='dropdown-content'>
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li><a href="#!">three</a></li>
-  <li><a href="#!">four</a></li>
-  <li><a href="#!">five</a></li>
+  <li><a onclick="handleFunc()">one</a></li>
+  <li><a onclick="handleFunc()">two</a></li>
+  <li><a onclick="handleFunc()">three</a></li>
+  <li><a onclick="handleFunc()">four</a></li>
+  <li><a onclick="handleFunc()">five</a></li>
 </ul>
 
 <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Difficulty</a>
@@ -67,3 +67,7 @@ selectionForm.innerHTML = `
 </ul>`
 
 homeDiv.appendChild(selectionForm)
+
+function handleFunc(){
+  console.log(event.target.innerText)
+}
