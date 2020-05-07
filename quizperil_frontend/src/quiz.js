@@ -269,6 +269,9 @@ function toggleResults() {
 
 // start timer on start button click
 startButton.onclick = function () {
+    if (!interval) {
+        interval = 1
+    }
     let time = 60 * parseInt(interval),
     display = document.querySelector('#time');
     startTimer(time, display);

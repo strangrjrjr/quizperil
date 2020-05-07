@@ -149,4 +149,4 @@ Single page app, default routing, but restricted actions
 
 [x] Selectable difficulty (easy, medium, hard)
 
-[] Add "Trivia against the clock!" to login
+[x] Add "Trivia against the clock!" to login
