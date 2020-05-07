@@ -269,7 +269,7 @@ function toggleResults() {
 
 // start timer on start button click
 startButton.onclick = function () {
-    let time = 60 * parseInt(document.getElementById('inputTimer').value),
+    let time = 60 * parseInt(interval),
     display = document.querySelector('#time');
     startTimer(time, display);
 };
