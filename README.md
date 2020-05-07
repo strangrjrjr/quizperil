@@ -147,6 +147,6 @@ Single page app, default routing, but restricted actions
 
 [] Selectable category (may be too difficult to parse)
 
-[] Selectable difficulty (easy, medium, hard)
+[x] Selectable difficulty (easy, medium, hard)
 
 [] Add "Trivia against the clock!" to login
