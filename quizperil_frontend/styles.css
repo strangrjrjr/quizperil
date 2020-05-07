@@ -15,7 +15,7 @@ html {
   font-family: 'Share Tech Mono', monospace;
 }
 
-#input {
+#input, #inputTimer, #inputDifficulty {
   margin-bottom: 20px;
 }
 
@@ -130,6 +130,10 @@ footer a {
   color: #fff176 !important;
 }
 
-a:hover {
+footer a:hover {
   text-decoration: underline;
+}
+
+#millispan {
+  margin-left: -5px;
 }

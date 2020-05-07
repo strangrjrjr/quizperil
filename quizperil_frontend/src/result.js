@@ -52,6 +52,7 @@ function displayPercentage(user){
     console.log(percentage)
     let banner = document.getElementById('percentage')
     banner.innerText = `${percentage} %`
+    // change this to 50 in production
     if (percentage >= 10){
         wipeImage()
         displayDog()
@@ -84,7 +85,6 @@ function displayDog(){
 }
 
 // retake button
-
 document.getElementById('quiz_button').addEventListener('click', function() {
     // question view
     toggleResults()
@@ -101,8 +101,8 @@ document.getElementById('quiz_button').addEventListener('click', function() {
 document.getElementById('logout_button').addEventListener('click', function() {
 
     toggleResults()
-    toggleHidden(document.getElementById('quiz_question'))
     toggleHidden(document.getElementById('timer_div'))
+    toggleHidden(document.getElementById('quiz_question'))
     toggleHidden(document.getElementById('homepage'))
     document.getElementById('usernameBar').reset()
     numRight = 0
