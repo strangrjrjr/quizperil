@@ -4,11 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Dropdown.init(elems, options);
 });
 
-
 let homeDiv = document.getElementById('homepage')
 let usernameBar = document.createElement('form')
 usernameBar.classList.add('container')
 usernameBar.id = 'usernameBar'
+
+let catchPhrase = document.createElement("h5")
+catchPhrase.className = 'center-align'
+catchPhrase.innerText = "Trivia Against The Clock!"
 
 let input = document.createElement('input')
 input.type = 'text'
@@ -22,7 +25,7 @@ loginButton.innerText = 'Login'
 loginButton.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 'lighten-2')
 loginButton.id = 'startButton'
 
-usernameBar.append(input, loginButton)
+usernameBar.append(catchPhrase, input, loginButton)
 homeDiv.appendChild(usernameBar)
 
 // ---------------new-form-for-time-and-difficulty-----
