@@ -17,35 +17,37 @@ input.name = 'username'
 input.placeholder = 'Please enter your username'
 input.className = 'center-align'
 
-let inputTimer = document.createElement('input')
-inputTimer.type = 'text'
-inputTimer.id = 'inputTimer'
-inputTimer.name = 'inputTimer'
-inputTimer.placeholder = 'minutes you want to play'
-inputTimer.className = 'center-align'
+// let inputTimer = document.createElement('input')
+// inputTimer.type = 'text'
+// inputTimer.id = 'inputTimer'
+// inputTimer.name = 'inputTimer'
+// inputTimer.placeholder = 'minutes you want to play'
+// inputTimer.className = 'center-align'
 
-let inputDifficulty = document.createElement('input')
-inputDifficulty.type = 'text'
-inputDifficulty.id = 'inputDifficulty'
-inputDifficulty.name = 'inputDifficulty'
-inputDifficulty.placeholder = 'easy/medium/hard/all'
-inputDifficulty.className = 'center-align'
+// let inputDifficulty = document.createElement('input')
+// inputDifficulty.type = 'text'
+// inputDifficulty.id = 'inputDifficulty'
+// inputDifficulty.name = 'inputDifficulty'
+// inputDifficulty.placeholder = 'easy/medium/hard/all'
+// inputDifficulty.className = 'center-align'
 
-let startButton = document.createElement('button')
-startButton.innerText = 'Start'
-startButton.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 'lighten-2')
-startButton.id = 'startButton'
-usernameBar.append(input, inputTimer,inputDifficulty, startButton)
+let loginButton = document.createElement('button')
+loginButton.innerText = 'Login'
+loginButton.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 'lighten-2')
+loginButton.id = 'startButton'
+
+usernameBar.append(input, loginButton)
 homeDiv.appendChild(usernameBar)
 
 // ---------------new-form-for-time-and-difficulty-----
 
 let selectionForm = document.createElement('form')
 selectionForm.classList.add('container')
+selectionForm.classList.add('hidden')
 selectionForm.id = 'selectionForm'
 
 selectionForm.innerHTML = `
-<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Minutes</a>
+<a class='dropdown-trigger btn' href='#' data-target='dropdown1' name='minutes'>Choose Minutes</a>
 
 <!-- Dropdown Structure -->
 <ul id='dropdown1' class='dropdown-content'>
@@ -56,7 +58,7 @@ selectionForm.innerHTML = `
   <li><a href="#!">five</a></li>
 </ul>
 
-<a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Difficulty</a>
+<a class='dropdown-trigger btn' href='#' data-target='dropdown2' name='difficulty'>Choose Difficulty</a>
 
 <!-- Dropdown Structure -->
 <ul id='dropdown2' class='dropdown-content'>
@@ -66,4 +68,10 @@ selectionForm.innerHTML = `
   <li><a href="#!">all</a></li>
 </ul>`
 
+let startButton = document.createElement('button')
+startButton.innerText = 'Start'
+startButton.classList.add('btn-large', 'waves-effect', 'waves-light', 'yellow', 'lighten-2')
+startButton.id = 'startButton'
+
+selectionForm.append(startButton)
 homeDiv.appendChild(selectionForm)

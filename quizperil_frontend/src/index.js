@@ -8,8 +8,8 @@ usernameBar.addEventListener("submit", getUser)
 
 function getUser(e) {
     e.preventDefault()
-    toggleHidden(homeDiv)
-    toggleHidden()//selectorsDiv?
+    toggleHidden(usernameBar)
+    toggleHidden(selectionForm)
 
     fetch(USERURL, {
         method: "POST",
@@ -22,17 +22,17 @@ function getUser(e) {
         })
     })
     .then(response => response.json())
-    .then(user => getData(user))
+    .then(user => setUser(user))
 }
 
 function setUser(user) {
     userId = user.id
-    //something.addEventListener("submit", getSelectors)
+    selectionForm.addEventListener("submit", getSelectors)
 }
 
 function getSelectors(e) {
     e.preventDefault()
-
+    debugger
     difficulty = "easy"//e.target.difficulty.value
     // interval = e.target.interval.value
     getData()
