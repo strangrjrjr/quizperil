@@ -67,8 +67,3 @@ selectionForm.innerHTML = `
 </ul>`
 
 homeDiv.appendChild(selectionForm)
-
-// theory of working dropdowns
-// 1. add event listener on DOMContentLoaded
-// 2. let elems = document.querySelectorAll('.dropdown-trigger')
-// 3. let instances = M.Dropdown.init() 
