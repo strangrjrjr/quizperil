@@ -94,13 +94,6 @@ document.getElementById('quiz_button').addEventListener('click', function() {
     toggleHidden(selectionForm)
 })
 
-function name(params) {
-    // restart timer
-    let time = 60 * 1,
-    display = document.querySelector('#time');
-    startTimer(time, display);
-}
-
 // logout button
 document.getElementById('logout_button').addEventListener('click', function() {
 

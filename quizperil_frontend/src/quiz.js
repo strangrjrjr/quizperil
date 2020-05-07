@@ -10,27 +10,38 @@ const messageDiv = document.getElementById("modal")
 const messageH2 = document.getElementById("message")
 let question_ids = []
 
+
 function fetchQuestions(method) {
-    fetch(QUESTURL)
+    fetch(`${QUESTURL}${difficulty}`)
     .then(resp => resp.json())
     .then(questions => {
         shuffle(questions)
-        switch (difficulty) {
-            case "easy":
-                questionList = questions.filter(question => question.difficulty === "easy")
-                break;
-            case "medium":
-                questionList = questions.filter(question => question.difficulty === "medium")
-                break;
-            case "hard":
-                questionList = questions.filter(question => question.difficulty === "hard")
-                break;
-            default:
-                questionList = questions
-        }
+        questionList = questions
         method()
     })
 }
+
+// function fetchQuestions(method) {
+//     fetch(QUESTURL)
+//     .then(resp => resp.json())
+//     .then(questions => {
+//         switch (difficulty) {
+//             case "easy":
+//                 questionList = questions.filter(question => question.difficulty === "easy")
+//                 break;
+//             case "medium":
+//                 questionList = questions.filter(question => question.difficulty === "medium")
+//                 break;
+//             case "hard":
+//                 questionList = questions.filter(question => question.difficulty === "hard")
+//                 break;
+//             default:
+//                 questionList = questions
+//         }
+//         shuffle(questionList)
+//         method()
+//     })
+// }
 
 function checkQuestions() {
     if (questionList.length === 0) {
