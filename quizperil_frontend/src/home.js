@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  let options = {}
+  var instances = M.Dropdown.init(elems, options);
+});
+
 
 let homeDiv = document.getElementById('homepage')
 let usernameBar = document.createElement('form')
@@ -10,17 +16,6 @@ input.id = 'input'
 input.name = 'username'
 input.placeholder = 'Please enter your username'
 input.className = 'center-align'
-
-// -----------slider-----------------
-// let slider = document.createElement('p')
-// slider.classList.add('range-field')
-// let timeInput = document.createElement('input')
-// timeInput.type = 'range' 
-// timeInput.id = 'timer-time'
-// timeInput.min = '1'
-// timeInput.max = '5'
-// slider.appendChild(timeInput)
-// --------------------------------------
 
 let inputTimer = document.createElement('input')
 inputTimer.type = 'text'
@@ -43,4 +38,32 @@ startButton.id = 'startButton'
 usernameBar.append(input, inputTimer,inputDifficulty, startButton)
 homeDiv.appendChild(usernameBar)
 
+// ---------------new-form-for-time-and-difficulty-----
 
+let selectionForm = document.createElement('form')
+selectionForm.classList.add('container')
+selectionForm.id = 'selectionForm'
+
+selectionForm.innerHTML = `
+<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Minutes</a>
+
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li><a href="#!">three</a></li>
+  <li><a href="#!">four</a></li>
+  <li><a href="#!">five</a></li>
+</ul>
+
+<a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Difficulty</a>
+
+<!-- Dropdown Structure -->
+<ul id='dropdown2' class='dropdown-content'>
+  <li><a href="#!">easy</a></li>
+  <li><a href="#!">medium</a></li>
+  <li><a href="#!">hard</a></li>
+  <li><a href="#!">all</a></li>
+</ul>`
+
+homeDiv.appendChild(selectionForm)
