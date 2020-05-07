@@ -79,11 +79,19 @@ startButton.id = 'startButton'
 function handleTimer(){
     console.log(event.target.innerText)
     interval = event.target.innerText
+    messageDiv.style.backgroundColor = "#26a69a"
+    messageH2.innerText = `You selected a ${event.target.innerText} minute timer`
+    toggleHidden(messageDiv)
+    setTimeout(toggleHidden, 1000, messageDiv)
 }
 
 function handleDifficulty() {
     console.log(event.target.innerText)
     difficulty = event.target.innerText
+    messageDiv.style.backgroundColor = "#26a69a"
+    messageH2.innerText = `You selected difficulty ${event.target.innerText}`
+    toggleHidden(messageDiv)
+    setTimeout(toggleHidden, 1000, messageDiv)
 }
 
 selectionForm.append(startButton)
