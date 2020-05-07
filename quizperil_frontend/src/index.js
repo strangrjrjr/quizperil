@@ -30,8 +30,6 @@ function setUser(user) {
 
 function getSelectors(e) {
     e.preventDefault()
-    // difficulty = e.target.inputDifficulty.value
-    // interval = e.target.inputTimer.value
     getData()
 }
 
