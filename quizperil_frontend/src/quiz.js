@@ -8,16 +8,37 @@ let numRight = 0
 let numWrong = 0
 const messageDiv = document.getElementById("modal")
 const messageH2 = document.getElementById("message")
-const question_ids = []
+let question_ids = []
 
 function fetchQuestions(method) {
     fetch(QUESTURL)
     .then(resp => resp.json())
     .then(questions => {
         shuffle(questions)
-        questionList = questions
+        switch (difficulty) {
+            case "easy":
+                questionList = questions.filter(question => question.difficulty === "easy")
+                break;
+            case "medium":
+                questionList = questions.filter(question => question.difficulty === "medium")
+                break;
+            case "hard":
+                questionList = questions.filter(question => question.difficulty === "hard")
+                break;
+            default:
+                questionList = questions
+        }
         method()
     })
+}
+
+function checkQuestions() {
+    if (questionList.length === 0) {
+        fetchQuestions(startQuiz)
+        // Should end quiz
+    } else {
+        showQuestion()
+    }
 }
 
 function showQuestion() {
@@ -127,9 +148,8 @@ function submitAnswer(e) {
     }
     toggleHidden(messageDiv)
     setTimeout(toggleHidden, 1000, messageDiv)
-    if (true) {
-        showQuestion()
-    }
+    
+    checkQuestions()
 }
 
 function toggleHidden(element) {
