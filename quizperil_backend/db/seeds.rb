@@ -39,10 +39,23 @@ end
 
 questions = JSON.parse(open("#{Rails.root}/db/questions.json").read)
 questions.each do |question|
-    # chane question["question_type"] to question["type"] when using API
+    # change question["question_type"] to question["type"] when using API
     quest = Question.create(category: question["category"], question_type: question["question_type"], difficulty: question["difficulty"], question: question["question"], correct_answer: question["correct_answer"], incorrect_answers: question["incorrect_answers"])
    
 end
+
+i = 2
+while i <=5 do
+    questions = JSON.parse(open("#{Rails.root}/db/questions#{i}.json").read)
+    qarray = questions["results"]
+    qarray.each do |question|
+        # change question["question_type"] to question["type"] when using API
+        quest = Question.create(category: question["category"], question_type: question["type"], difficulty: question["difficulty"], question: question["question"], correct_answer: question["correct_answer"], incorrect_answers: question["incorrect_answers"])
+    end
+    puts "SEEDED QUESTIONS #{i}"
+    i += 1
+end
+
 
 # GENERATE QUIZQUESTIONS
 100.times do 
