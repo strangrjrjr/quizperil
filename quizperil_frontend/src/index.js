@@ -2,11 +2,12 @@
 const USERURL = "http://localhost:3000/users"
 let userId
 
-usernameBar.addEventListener("submit", setUser)
+usernameBar.addEventListener("submit", getUser)
 
-function setUser(e) {
+function getUser(e) {
     e.preventDefault()
-    homeDiv.classList.toggle("hidden")
+    toggleHidden(usernameBar)
+    toggleHidden(selectionForm)
 
     fetch(USERURL, {
         method: "POST",
@@ -19,12 +20,24 @@ function setUser(e) {
         })
     })
     .then(response => response.json())
-    .then(user => getData(user))
-} 
+    .then(user => setUser(user))
+}
 
-function getData(user) {
+function setUser(user) {
     userId = user.id
+    selectionForm.addEventListener("submit", getSelectors)
+}
+
+function getSelectors(e) {
+    e.preventDefault()
+    // difficulty = e.target.inputDifficulty.value
+    // interval = e.target.inputTimer.value
+    getData()
+}
+
+function getData() {
     const questDiv = document.getElementById("quiz_question")
+    toggleHidden(selectionForm)
     toggleHidden(questDiv)
     toggleHidden(timerDiv)
     fetchQuestions(startQuiz)
