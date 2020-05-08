@@ -83,7 +83,7 @@ function handleTimer(){
     console.log(event.target.innerText)
     interval = event.target.innerText
     messageDiv.style.backgroundColor = "#26a69a"
-    messageH2.innerText = `You selected a ${event.target.innerText} minute timer`
+    messageH2.innerText = `You selected a ${event.target.innerText} timer`
     toggleHidden(messageDiv)
     setTimeout(toggleHidden, 1000, messageDiv)
 }
