@@ -57,11 +57,11 @@ selectionForm.innerHTML = `
 
 <!-- Dropdown Structure -->
 <ul id='dropdown1' class='dropdown-content'>
-  <li><a onclick="handleTimer()">1</a></li>
-  <li><a onclick="handleTimer()">2</a></li>
-  <li><a onclick="handleTimer()">3</a></li>
-  <li><a onclick="handleTimer()">4</a></li>
-  <li><a onclick="handleTimer()">5</a></li>
+  <li><a onclick="handleTimer()">1 minute</a></li>
+  <li><a onclick="handleTimer()">2 minutes</a></li>
+  <li><a onclick="handleTimer()">3 minutes</a></li>
+  <li><a onclick="handleTimer()">4 minutes</a></li>
+  <li><a onclick="handleTimer()">5 minutes</a></li>
 </ul>
 
 <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Choose Difficulty</a>
